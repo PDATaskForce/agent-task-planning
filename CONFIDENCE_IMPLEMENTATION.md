@@ -176,6 +176,6 @@ The confidence extraction module:
 
 ## Author
 
-Developed by TortoiseAI for the PDA Task Force based on requirements from Lawrence Rowland (GenAI Integrator/AI Agent Manager).
+Developed by TortoiseAI for the PDA Task Force based on requirements from Lawrence Rowland (GenAI Integrator/AI Agent Manager).[ lawrencerowland](https://github.com/lawrencerowland)
 
 Implementation based on the detailed specification provided.
