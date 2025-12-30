@@ -222,8 +222,6 @@ The **Agent Reliability Maturity Model (ARMM)** is a comprehensive framework for
 - Governance Framework
 - Organisational Capability
 
-At five maturity levels. Updates at [tortoiseai.co.uk/armm](https://tortoiseai.co.uk/armm).
-
 ## Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
