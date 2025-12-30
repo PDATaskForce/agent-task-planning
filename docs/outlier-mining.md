@@ -191,3 +191,7 @@ Typical costs for 32 samples:
 - Reduce samples to 16-20 for lower cost
 
 Use mining selectively for high-value exploratory analysis.
+
+## Acknowledgement
+
+This feature was shaped by suggestions from [Lawrence Rowland](https://github.com/lawrencerowland), including the outlier mining approach for hard problems (referencing the Codex n=32 pattern).

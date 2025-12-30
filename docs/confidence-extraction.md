@@ -176,3 +176,7 @@ pytest tests/test_confidence/
 - Requires 5x the API calls of single extraction (mitigated by early stopping)
 - Confidence measures agreement, not correctness
 - Best suited for tasks with objective answers
+
+## Acknowledgement
+
+This feature was shaped by suggestions from [Lawrence Rowland](https://github.com/lawrencerowland), including multi-sample queries with median answer identification, outlier detection, and sign-off regimes with verification levels.

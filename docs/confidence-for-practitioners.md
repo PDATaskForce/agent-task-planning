@@ -175,3 +175,7 @@ risks_for_report = result.consensus
 For technical documentation, see [confidence-extraction.md](confidence-extraction.md).
 
 This capability was developed by TortoiseAI for the PDA Task Force as part of the agent-task-planning toolkit.
+
+## Acknowledgement
+
+This feature was shaped by suggestions from [Lawrence Rowland](https://github.com/lawrencerowland).

@@ -291,6 +291,10 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 This project is maintained by the [PDA Task Force](https://github.com/PDATaskForce). Issues and pull requests are reviewed by community maintainers.
 
+## Acknowledgements
+
+The confidence extraction and outlier mining capabilities were shaped by feature suggestions from [Lawrence Rowland](https://github.com/lawrencerowland).
+
 ## License
 
 MIT License. Free to use, modify, and distribute with attribution.
