@@ -35,6 +35,20 @@ class GuardrailConfig(BaseModel):
     blocked_patterns: list[str] = Field(default_factory=list)
     allowed_tools: Optional[list[str]] = None
 
+    # Confidence extraction settings
+    confidence_enabled: bool = False
+    confidence_samples: int = Field(default=5, ge=1, le=20)
+    confidence_temperature: float = Field(default=0.7, ge=0.0, le=2.0)
+    confidence_early_stop_threshold: float = Field(default=0.6, ge=0.0, le=1.0)
+    confidence_review_thresholds: dict[str, float] = Field(
+        default_factory=lambda: {
+            "none": 0.8,           # >= 0.8: no review
+            "spot_check": 0.6,    # >= 0.6: spot check
+            "detailed": 0.4,      # >= 0.4: detailed review
+            # < 0.4: expert required
+        }
+    )
+
     def requires_approval(self, action: str) -> bool:
         """Check if an action requires human approval."""
         action_lower = action.lower()
