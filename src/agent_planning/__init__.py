@@ -23,6 +23,13 @@ from agent_planning.confidence import (
     SchemaType,
     ReviewLevel,
 )
+from agent_planning.mining import (
+    OutlierMiner,
+    mine,
+    mine_batch,
+    MiningConfig,
+    MiningResult,
+)
 
 __version__ = "0.1.0"
 
@@ -41,4 +48,10 @@ __all__ = [
     "ConfidenceResult",
     "SchemaType",
     "ReviewLevel",
+    # Outlier mining
+    "OutlierMiner",
+    "mine",
+    "mine_batch",
+    "MiningConfig",
+    "MiningResult",
 ]
