@@ -33,6 +33,7 @@ This library implements the **To-Do List Planning** pattern, which research show
 - **Full observability**: Structured logging, token tracking, state history
 - **Framework-agnostic**: Use standalone or integrate with LangChain, Temporal, etc.
 - **Type-safe**: Full type hints, Pydantic models, runtime validation
+- **Confidence extraction**: Self-consistency sampling for reliable structured data extraction from PM documents (see [docs/confidence-extraction.md](docs/confidence-extraction.md))
 
 ## Quick Start
 

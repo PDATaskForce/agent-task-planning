@@ -15,6 +15,14 @@ from agent_planning.core.state import TaskState, ExecutionResult
 from agent_planning.core.planner import BasePlanner
 from agent_planning.planners.todo_list import TodoListPlanner
 from agent_planning.guardrails.limits import GuardrailConfig
+from agent_planning.confidence import (
+    ConfidenceExtractor,
+    confidence_extract,
+    confidence_extract_batch,
+    ConfidenceResult,
+    SchemaType,
+    ReviewLevel,
+)
 
 __version__ = "0.1.0"
 
@@ -26,4 +34,11 @@ __all__ = [
     "BasePlanner",
     "TodoListPlanner",
     "GuardrailConfig",
+    # Confidence extraction
+    "ConfidenceExtractor",
+    "confidence_extract",
+    "confidence_extract_batch",
+    "ConfidenceResult",
+    "SchemaType",
+    "ReviewLevel",
 ]
