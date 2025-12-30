@@ -110,6 +110,48 @@ python scripts/demo.py "Research AI planning patterns and summarise"
 python scripts/demo.py --provider ollama --model llama3.1:8b "List 3 benefits of exercise"
 ```
 
+### Confidence Extraction (New)
+
+Extract reliable structured data from PM documents using self-consistency:
+
+```python
+from agent_planning import ConfidenceExtractor, SchemaType
+from agent_planning.providers import AnthropicProvider
+
+provider = AnthropicProvider(api_key="your-key")
+extractor = ConfidenceExtractor(provider)
+
+result = await extractor.extract(
+    query="What are the top 5 risks for this project?",
+    context=project_document,
+    schema=SchemaType.RISK,
+)
+
+print(f"Confidence: {result.confidence:.2%}")
+print(f"Review needed: {result.review_level.value}")
+```
+
+### Outlier Mining (New)
+
+Discover diverse approaches by mining outliers as signal:
+
+```python
+from agent_planning import OutlierMiner, MiningConfig
+from agent_planning.providers import AnthropicProvider
+
+provider = AnthropicProvider(api_key="your-key")
+miner = OutlierMiner(provider, MiningConfig(samples=32))
+
+result = await miner.mine(
+    query="What non-obvious risks might affect this project?",
+    context=project_document,
+    schema=SchemaType.RISK,
+)
+
+print(f"Found {result.num_clusters} distinct approaches")
+print(f"Diversity: {result.diversity_score:.2f}")
+```
+
 ## Architecture
 
 ```mermaid
@@ -185,10 +227,16 @@ For safety-critical applications, consider the [hybrid approach](examples/04_tem
 
 ## Documentation
 
+### Core Features
 - [Architecture and Diagrams](docs/architecture.md)
 - [When to Use What](docs/when-to-use-what.md)
 - [Cost Considerations](docs/cost-considerations.md)
 - [Troubleshooting](docs/troubleshooting.md)
+
+### PM Data Extraction
+- [Confidence Extraction](docs/confidence-extraction.md) - Technical documentation for reliable structured data extraction
+- [Confidence for Practitioners](docs/confidence-for-practitioners.md) - Non-technical guide for PM professionals
+- [Outlier Mining](docs/outlier-mining.md) - Discover diverse approaches and novel insights
 
 ## Prompt Templates
 
@@ -200,12 +248,27 @@ If you just want the prompts without the library:
 
 ## Examples
 
+### Task Planning
 | Example | Description |
 |---------|-------------|
 | [01_basic_usage.py](examples/01_basic_usage.py) | Simple task execution |
 | [02_multi_provider.py](examples/02_multi_provider.py) | Switching between Claude, GPT-4, Gemini |
 | [03_with_guardrails.py](examples/03_with_guardrails.py) | Production configuration |
 | [04_temporal_hybrid.py](examples/04_temporal_hybrid.py) | Deterministic orchestration pattern |
+
+### Confidence Extraction
+| Example | Description |
+|---------|-------------|
+| [05_basic_confidence.py](examples/05_basic_confidence.py) | Simple confidence extraction |
+| [06_pm_extraction.py](examples/06_pm_extraction.py) | Multiple PM schema types |
+| [07_batch_confidence.py](examples/07_batch_confidence.py) | Batch processing with concurrency |
+| [08_custom_schema.py](examples/08_custom_schema.py) | Custom schema definition |
+
+### Outlier Mining
+| Example | Description |
+|---------|-------------|
+| [09_basic_mining.py](examples/09_basic_mining.py) | Mining for diverse approaches |
+| [10_risk_mining.py](examples/10_risk_mining.py) | Mining for non-obvious risks |
 
 ## Supporting Research
 
